@@ -3,28 +3,27 @@
 crontab task will call periodicaly a linux script with performs a python script (vrc.py). thispython scripts raeds the log-files on µSDcard and copies relevant data into a new textfile. Afterwards this textfile will be transfered to a ftp-repository on an web server 
 
 ## Crontab service
-... to be added
 
 Folder: /etc/crontabs
 File: root
 Content:
 ```C++
-0 23 * * * /usr/bin/vrc
-
+*/5 * * * * /usr/bin/vrc
+#
 ```
 
 ###Crontab Syntax
-> Jeder Cronjob hat folgendes Format:
-> * * * * * auszuführender Befehl
->  ┬ ┬ ┬ ┬ ┬
->  │ │ │ │ │
->  │ │ │ │ └──── Wochentag (0-7, Sonntag ist 0 oder 7)
->  │ │ │ └────── Monat (1-12)
->  │ │ └──────── Tag (1-31)
->  │ └────────── Stunde (0-23)
->  └──────────── Minute (0-59)
-> Ein Stern * bedeutet Ausführung wird immer erfolgen, also zu jeder Minute, jeder Stunde, jedem Tag, jedem Monat oder jedem 
-> Wochentag. 
+ Jeder Cronjob hat folgendes Format:
+ * * * * * auszuführender Befehl
+  ┬ ┬ ┬ ┬ ┬
+  │ │ │ │ │
+  │ │ │ │ └──── Wochentag (0-7, Sonntag ist 0 oder 7)
+  │ │ │ └────── Monat (1-12)
+  │ │ └──────── Tag (1-31)
+  │ └────────── Stunde (0-23)
+  └──────────── Minute (0-59)
+ Ein Stern * bedeutet Ausführung wird immer erfolgen, also zu jeder Minute, jeder Stunde, jedem Tag, jedem Monat oder jedem 
+ Wochentag. 
 
 
 ##Linux script
