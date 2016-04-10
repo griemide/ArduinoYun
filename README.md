@@ -2,8 +2,9 @@
 Projects using Arduino Yun platform
 
 follwing projects currently implemented / planned:
-- [x] VRC Monitor
-- [x] logging on µSD card
+- [x] :one: VRC Monitor
+- [x] :two: logging on µSD card
+- [ ] :three: VRC statistics
 
 ## Installation hints
 
@@ -12,10 +13,8 @@ Telnet session on serial monitor (Arduino bridge):
 use ssh-server tool to open ssh session. Type shortcut comand 'tn' to run script on /usr/bin.
 Script must be copyied once from SD card folder wwww/TelnetLocalhost6571 by executing file 'runOnceTransferScript'
 used SSH-Tools:
-
-:one: PuTTY (Windows system)
-
-:two: Serveraudithor (IOS devices)
+* PuTTY (Windows system)
+*Serveraudithor (IOS devices)
 
 ### SFTP-Server
 the Linino package does nott come with SFTP support. But it can be installed via SSH session or via LuCI web interface (System/Software).
