@@ -9,6 +9,8 @@ Description ans systax see [Cron](https://de.wikipedia.org/wiki/Cron)
 Arduino Yun (linino folder): /etc/crontabs
 
 File: root
+Modificationcould be done via SSH or LuCI
+
 Content:
 
 ```unix
@@ -17,6 +19,12 @@ Content:
 ```
 
 I.e. script /usr/bin/Vrc will be called every 5 minutes. It dependen on the amoung of traffic for the associated web service used how often the script should be called. For initial evaluation a 5 minutes period is choosen. later on an update period of one hour is more likely.
+
+The Arduino Yun web interface LuCI is more convenient to set, update, activate or monitor the cron daemon.
+Use:
+> System - Scheduled Task to set or update a secific cronjob
+> System - Startup to restart cron daemon
+> Status - System Log to check successfull restart of cron daemon (Arduino cron.info crond)
 
 
 ##Linux script
