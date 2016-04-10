@@ -69,7 +69,7 @@ needs to be located in folder /mnt/sda1/arduino/www/vrc
 Evaluated data will be stored in /txt/vrc_YYYY-MM-DD.log and into
 file vrc2008day.txt for the ftp transfer to the outside web service repository.
 
-### Example of output file after transfer to web service
+### Example of output file **http://www.gries.name/VRC/vrc2008day.txt** after transfer to web service
 
 ```javascript
 // Sourcefile: vrc_2016-04-11.log 
