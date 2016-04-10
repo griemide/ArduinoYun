@@ -4,14 +4,14 @@ crontab task will call periodicaly a linux script with performs a python script 
 
 ## Cron-Daemon (Cronjobs)
 
-Description ans systax see [Cron](https://de.wikipedia.org/wiki/Cron)
+Description of **cron** syntax see [Cron](https://de.wikipedia.org/wiki/Cron)
 
 Arduino Yun (linino folder): /etc/crontabs
 
 File: root
 Modificationcould be done via SSH or LuCI
 
-Content:
+file content:
 
 ```unix
 */5 * * * * /usr/bin/vrc
