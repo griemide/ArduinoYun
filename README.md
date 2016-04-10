@@ -29,3 +29,5 @@ SFTP service can than be used instandly (i.e. without booting the system) by usi
 
 [GitHub griemide](https://github.com/griemide)
 
+
+:copyright: 2016, Michael Gries
