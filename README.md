@@ -1,7 +1,7 @@
 # Arduino Yun
-Projects using Arduino Yun platform [Yun Localhost](http://192.168.0.10)
+Projects using Arduino Yun platform - Link: [Yun Localhost](http://192.168.0.10)
 
-follwing projects currently implemented / planned:
+follwing projects currently implemented [x] / planned [ ]:
 - [x] :one: VRC Monitor
 - [x] :two: logging on µSD card :floppy_disk:
 - [ ] :three: VRC statistics
