@@ -2,33 +2,21 @@
 
 crontab task will call periodicaly a linux script with performs a python script (vrc.py). thispython scripts raeds the log-files on µSDcard and copies relevant data into a new textfile. Afterwards this textfile will be transfered to a ftp-repository on an web server 
 
-## Crontab service
+## Cron-Daemon (Cronjobs)
 
-Folder: /etc/crontabs
+Description ans systax see [Cron](https://de.wikipedia.org/wiki/Cron)
+
+Arduino Yun (linino folder): /etc/crontabs
+
 File: root
 Content:
+
 ```unix
 */5 * * * * /usr/bin/vrc
 #
 ```
 
-###Crontab Syntax
-Jeder Cronjob hat folgendes Format:
-
-\* \* \* \* \* auszuführender Befehl
-
- ┬ ┬ ┬ ┬ ┬
- │ │ │ │ │
- 
- │ │ │ │ └──── Wochentag (0-7, Sonntag ist 0 oder 7)
- 
- │ │ │ └────── Monat (1-12)
- 
- │ │ └──────── Tag (1-31)
- │ └────────── Stunde (0-23)
- └──────────── Minute (0-59)
-Ein Stern * bedeutet Ausführung wird immer erfolgen, also zu jeder Minute, jeder Stunde, jedem Tag, jedem Monat oder jedem 
-Wochentag. 
+I.e. script /usr/bin/Vrc will be called every 5 minutes. It dependen on the amoung of traffic for the associated web service used how often the script should be called. For initial evaluation a 5 minutes period is choosen. later on an update period of one hour is more likely.
 
 
 ##Linux script
