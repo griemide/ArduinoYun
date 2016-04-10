@@ -38,3 +38,11 @@ Atributes of \`vrc\`needs to be changed to execute (chmod 755) or via FileZilla 
 
 recommended Python version 2.7.6.1
 
+The both python scripts 
+* vrc.py
+* vrc2ftp.py
+
+needs to be located in folder /mnt/sda1/arduino/www/vrc
+
+Evaluated data will be stored in /txt/vrc_YYYY-MM-DD.log and into
+file vrc2008day.txt for the ftp transfer to the outside web service repository.
