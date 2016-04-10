@@ -23,8 +23,8 @@ I.e. script /usr/bin/Vrc will be called every 5 minutes. It dependen on the amou
 The Arduino Yun web interface LuCI is more convenient to set, update, activate or monitor the cron daemon.
 Use:
 > * **System - Scheduled Task** to set or update a secific cronjob
-> * System - Startup to restart cron daemon
-> * Status - System Log to check successfull restart of cron daemon (Arduino cron.info crond)
+> * **System - Startup** to restart cron daemon
+> * **Status - System Log** to check successfull restart of cron daemon (Arduino cron.info crond)
 
 
 ##Linux script
