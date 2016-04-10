@@ -25,5 +25,9 @@ opkg update
 opkg install openssh-sftp-server
 ```
 
-SFTP service can than be used instandtly (i.e. without booting system) by using a SFTP programm (like FileZilla). Installed version of openssh-sftp-server can be checked by using above mentioned LuCI web interface (System/Software/Installed Packages).
+SFTP service can than be used instandly (i.e. without booting the system) by using a SFTP programm (like FileZilla). Installed version of `\openssh-sftp-server`\ can be checked by using above mentioned LuCI web interface (System/Software/Installed Packages).
 
+[GitHub](http://github.com)
+
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
