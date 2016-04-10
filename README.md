@@ -39,7 +39,7 @@ used SFTP tools:
 * FileZilla............(Windows system :computer: )
 
 
-[GitHub griemide](https://github.com/griemide)
+[GitHub griemide](https://github.com/griemide)  - [EMOJ I](http://www.emoji-cheat-sheet.com/) :blush:
 
 
-:copyright: 2016, Michael Gries
+:copyright: 2016, Michael Gries 
