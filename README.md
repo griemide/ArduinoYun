@@ -13,7 +13,7 @@ Telnet session on serial monitor (Arduino bridge):
 use ssh-server tool to open ssh session. Type shortcut comand 'tn' to run script on /usr/bin.
 Script must be copyied once from SD card folder wwww/TelnetLocalhost6571 by executing file 'runOnceTransferScript'
 used SSH-Tools:
-* PuTTY<tab>(Windows system :computer: )
+* PuTTY</tab>(Windows system :computer: )
 * Serveraudithor  (IOS devices :iphone: )
 
 ### SFTP-Server
