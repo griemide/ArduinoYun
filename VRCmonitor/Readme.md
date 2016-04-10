@@ -1,6 +1,13 @@
 #VRC Monitor
 
-```python
+crontab task will call periodicaly a linux script with performs a python script (vrc.py). thispython scripts raeds the log-files on µSDcard and copies relevant data into a new textfile. Afterwards this textfile will be transfered to a ftp-repository on an web server 
+
+## Crontab service
+... to be added
+
+##Linux script
+
+```linux
 # /usr/bin
 # 2014-11-14 creaion
 # 2015-02-19 copy result to 'txt' folder on local sd-card
