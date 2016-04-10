@@ -32,5 +32,5 @@ SFTP service can than be used instandly (i.e. without booting the system) by usi
 1. Item 1
 2. Item 2
 3. Item 3
-   * Item 3a
-   * Item 3b
+   3.2 Item 3a
+   3.5 Item 3b
