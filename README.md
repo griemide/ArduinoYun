@@ -2,7 +2,8 @@
 Projects using Arduino Yun platform - Link: [Yun Localhost](http://192.168.0.10)
 
 follwing projects currently implemented [x] / planned [ ]:
-- [x] :one: VRC Monitor :file_folder:   - [VRC Monitor](VRCmonitor}
+- [x] :one: VRC Monitor :file_folder:   
+[VRC Monitor](https://github.com/griemide/ArduinoYun/tree/master/VRCmonitor)
 - [x] :two: logging on µSD card :floppy_disk:
 - [ ] :three: VRC statistics :chart_with_upwards_trend:
 
