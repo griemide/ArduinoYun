@@ -12,7 +12,8 @@ follwing projects currently implemented [x] / planned [ ]:
 Telnet session on serial monitor (Arduino bridge):
 use ssh-server tool to open ssh session. Type shortcut comand 'tn' to run script on /usr/bin.
 Script must be copyied once from SD card folder wwww/TelnetLocalhost6571 by executing file 'runOnceTransferScript'
-used SSH-Tools:
+
+Used SSH-Tools:
 * PuTTY...............(Windows system :computer: )
 * Serveraudithor...(IOS devices :iphone: )
 
@@ -26,6 +27,10 @@ opkg install openssh-sftp-server
 ```
 
 SFTP service can than be used instandly (i.e. without booting the system) by using a SFTP programm (like FileZilla). Installed version of `\openssh-sftp-server`\ can be checked by using above mentioned LuCI web interface (System/Software/Installed Packages).
+
+used SFTP tools:
+* FileZilla............(Windows system :computer: )
+
 
 [GitHub griemide](https://github.com/griemide)
 
