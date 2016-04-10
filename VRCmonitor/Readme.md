@@ -34,3 +34,7 @@ Atributes of \`vrc\`needs to be changed to execute (chmod 755) or via FileZilla 
 ![chmod 755](images/vrcChangedAttributes.png)
 
 
+##Python
+
+recommended Python version 2.7.6.1
+
