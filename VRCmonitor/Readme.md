@@ -30,7 +30,7 @@ echo $textfile
 # 
 ```
 
-Atributes of \`vrc\`needs to be chnegd to execute (chmod 755) or via FileZilla (see picture)
+Atributes of \`vrc\`needs to be changed to execute (chmod 755) or via FileZilla (see picture)
 ![chmod 755](images/vrcChangedAttributes.png)
 
 
