@@ -52,7 +52,7 @@ echo $textfile
 # 
 ```
 
-Atributes of \`vrc\`needs to be changed to execute (chmod 755) or via FileZilla (see picture)
+Atributes of scrip file **vrc** needs to be changed to execute (chmod 755) or via FileZilla (see picture)
 ![chmod 755](images/vrcChangedAttributes.png)
 
 
