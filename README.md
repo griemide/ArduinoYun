@@ -16,8 +16,7 @@ Within SSH session (like PuTTY) type in:
 telnet Localhost 6571
 ```
 or
-type shortcut comand 'tn' to run script on /usr/bin (needs to be installed once)
-Script must be copyied once from SD card folder wwww/TelnetLocalhost6571 by executing file 'runOnceTransferScript'
+type shortcut command **tn** to run script on /usr/bin (needs to be installed once)
 
 ```C++
 #/usr/bin
@@ -29,6 +28,20 @@ echo "running 'telnet localhost 6571' "
 echo ""
 #
 telnet localhost 6571
+```
+
+Script **tn** must be copied once from SD card folder wwww/TelnetLocalhost6571 by executing file **runOnceTransferScript**
+
+```C++
+#/www/sd/TelnetLocalhost6571/runOnceTransferScript
+#
+cp tn /usr/bin
+#
+echo "file 'tn' copied to /usr/bin"
+echo "run 'tn' only if Console is available"
+echo ""
+echo "2014-07-28, Michael Gries"
+echo ""
 ```
 
 Used SSH-Tools:
