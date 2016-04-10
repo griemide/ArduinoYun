@@ -14,14 +14,12 @@ use ssh-server tool to open ssh session. Type shortcut comand 'tn' to run script
 Script must be copyied once from SD card folder wwww/TelnetLocalhost6571 by executing file 'runOnceTransferScript'
 used SSH-Tools:
 * PuTTY (Windows system)
-*Serveraudithor (IOS devices)
+* Serveraudithor (IOS devices)
 
 ### SFTP-Server
 the Linino package does nott come with SFTP support. But it can be installed via SSH session or via LuCI web interface (System/Software).
-Within SSH session (like PuTTY) type in:
-* opkg update
-* opkg install openssh-sftp-server
 
+Within SSH session (like PuTTY) type in:
 ```C++
 opkg update
 opkg install openssh-sftp-server
