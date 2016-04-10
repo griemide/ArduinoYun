@@ -1,5 +1,5 @@
 # Arduino Yun
-Projects using Arduino Yun platform
+Projects using Arduino Yun platform [Yun Localhost](http://192.168.0.10)
 
 follwing projects currently implemented / planned:
 - [x] :one: VRC Monitor
@@ -27,7 +27,4 @@ opkg install openssh-sftp-server
 
 SFTP service can than be used instandly (i.e. without booting the system) by using a SFTP programm (like FileZilla). Installed version of `\openssh-sftp-server`\ can be checked by using above mentioned LuCI web interface (System/Software/Installed Packages).
 
-[GitHub](http://github.com)
-
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
+[GitHub griemide](https://github.com/griemide)
