@@ -13,8 +13,8 @@ Telnet session on serial monitor (Arduino bridge):
 use ssh-server tool to open ssh session. Type shortcut comand 'tn' to run script on /usr/bin.
 Script must be copyied once from SD card folder wwww/TelnetLocalhost6571 by executing file 'runOnceTransferScript'
 used SSH-Tools:
-* PuTTY...........(Windows system :computer: )
-* Serveraudithor..(IOS devices :iphone: )
+* PuTTY...............(Windows system :computer: )
+* Serveraudithor...(IOS devices :iphone: )
 
 ### SFTP-Server
 the Linino package does nott come with SFTP support. But it can be installed via SSH session or via LuCI web interface (System/Software).
