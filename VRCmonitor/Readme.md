@@ -7,7 +7,7 @@ crontab task will call periodicaly a linux script with performs a python script 
 
 ##Linux script
 
-```javascript
+```script
 # /usr/bin
 # 2014-11-14 creaion
 # 2015-02-19 copy result to 'txt' folder on local sd-card
