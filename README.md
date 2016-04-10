@@ -3,7 +3,7 @@ Projects using Arduino Yun platform
 
 follwing projects currently implemented / planned:
 - [x] :one: VRC Monitor
-- [x] :two: logging on µSD card
+- [x] :two: logging on µSD card :floppy_disk:
 - [ ] :three: VRC statistics
 
 ## Installation hints
@@ -13,7 +13,7 @@ Telnet session on serial monitor (Arduino bridge):
 use ssh-server tool to open ssh session. Type shortcut comand 'tn' to run script on /usr/bin.
 Script must be copyied once from SD card folder wwww/TelnetLocalhost6571 by executing file 'runOnceTransferScript'
 used SSH-Tools:
-* PuTTY (Windows system)
+* PuTTY (Windows system :computer: )
 * Serveraudithor (IOS devices :iphone: )
 
 ### SFTP-Server
