@@ -7,23 +7,23 @@ crontab task will call periodicaly a linux script with performs a python script 
 Folder: /etc/crontabs
 File: root
 Content:
-```C++
+```unix
 */5 * * * * /usr/bin/vrc
 #
 ```
 
 ###Crontab Syntax
- Jeder Cronjob hat folgendes Format:
- * * * * * auszuführender Befehl
-  ┬ ┬ ┬ ┬ ┬
-  │ │ │ │ │
-  │ │ │ │ └──── Wochentag (0-7, Sonntag ist 0 oder 7)
-  │ │ │ └────── Monat (1-12)
-  │ │ └──────── Tag (1-31)
-  │ └────────── Stunde (0-23)
-  └──────────── Minute (0-59)
- Ein Stern * bedeutet Ausführung wird immer erfolgen, also zu jeder Minute, jeder Stunde, jedem Tag, jedem Monat oder jedem 
- Wochentag. 
+Jeder Cronjob hat folgendes Format:
+\* \* \* \* \* auszuführender Befehl
+ ┬ ┬ ┬ ┬ ┬
+ │ │ │ │ │
+ │ │ │ │ └──── Wochentag (0-7, Sonntag ist 0 oder 7)
+ │ │ │ └────── Monat (1-12)
+ │ │ └──────── Tag (1-31)
+ │ └────────── Stunde (0-23)
+ └──────────── Minute (0-59)
+Ein Stern * bedeutet Ausführung wird immer erfolgen, also zu jeder Minute, jeder Stunde, jedem Tag, jedem Monat oder jedem 
+Wochentag. 
 
 
 ##Linux script
