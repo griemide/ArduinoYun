@@ -19,6 +19,17 @@ or
 type shortcut comand 'tn' to run script on /usr/bin (needs to be installed once)
 Script must be copyied once from SD card folder wwww/TelnetLocalhost6571 by executing file 'runOnceTransferScript'
 
+```C++
+#/usr/bin
+#
+echo ""
+echo "tn, 2014-07-28, Michael Gries"
+echo ""
+echo "running 'telnet localhost 6571' "
+echo ""
+#
+telnet localhost 6571
+```
 
 Used SSH-Tools:
 * PuTTY...............(Windows system :computer: )
