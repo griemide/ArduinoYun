@@ -29,3 +29,8 @@ SFTP service can than be used instandly (i.e. without booting the system) by usi
 
 [GitHub griemide](https://github.com/griemide)
 
+1. Item 1
+2. Item 2
+3. Item 3
+* Item 3a
+* Item 3b
