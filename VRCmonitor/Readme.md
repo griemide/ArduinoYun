@@ -29,3 +29,8 @@ cp vrc2008day.txt $textfile
 echo $textfile
 # 
 ```
+
+Atributes of \`vrc\`needs to be chnegd to execute (chmod 755) or via FileZilla (see picture)
+![chmod 755](images/vrcChangedAttributes.png)
+
+
