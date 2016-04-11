@@ -13,10 +13,10 @@ Following process steps required:
 * sending human readable data to external (public) web service
 * Email or smsm notifications for special case (e.g. maintainance)
 
+## Process Description
+A crontab task will call periodicaly a linux script (vrc) which runs a python script (vrc.py). This python scripts reads the log-files on µSDcard and copies relevant data into a new textfile. Afterwards this textfile will be transfered to a ftp-repository on a public web server.
 
-crontab task will call periodicaly a linux script with performs a python script (vrc.py). thispython scripts raeds the log-files on µSDcard and copies relevant data into a new textfile. Afterwards this textfile will be transfered to a ftp-repository on an web server 
-
-## Cron-Daemon (Cronjobs)
+### Cron-Daemon (Cronjobs)
 
 Description of **cron** syntax see [Cron](https://de.wikipedia.org/wiki/Cron)
 
@@ -41,7 +41,7 @@ Use:
 > * **Status - System Log** to check successfull restart of cron daemon (Arduino cron.info crond)
 
 
-##Linux script
+###Linux script
 
 ```script
 # /usr/bin
@@ -70,7 +70,7 @@ Atributes of scrip file **vrc** needs to be changed to execute (chmod 755) or vi
 ![chmod 755](images/vrcChangedAttributes.png)
 
 
-##Python
+###Python
 
 recommended Python version 2.7.6.1
 
@@ -83,7 +83,7 @@ needs to be located in folder /mnt/sda1/arduino/www/vrc
 Evaluated data will be stored in /txt/vrc_YYYY-MM-DD.log and into
 file vrc2008day.txt for the ftp transfer to the outside web service repository.
 
-### Example of output file **http://www.gries.name/VRC/vrc2008day.txt** after transfer to web service
+#### Example of output file **http://www.gries.name/VRC/vrc2008day.txt** after transfer to web service
 
 ```javascript
 // Sourcefile: vrc_2016-04-11.log 
