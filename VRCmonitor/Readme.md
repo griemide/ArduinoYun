@@ -1,5 +1,19 @@
 #VRC Monitor
 
+[Visualisation](http://www.gries.name/VRC/VRCday.shtm) of heating system **VKO unit** by monitoring data of **VRC 410** control unit.
+
+
+## Short Description
+Data of VRC 410 device will monitored, stored and and some parameters (outside temperature, boiler temp, ...) will be analysed aby an linux based embedded system and displayed on a public web service.
+
+Following process steps required:
+* permanently monitoring of received data transferred between VKO unit and VRC 410 control unit
+* storing of raw data on µSDcard of embedded system for later evaluation 
+* evaluation and analysing of stored data within a configured time period
+* sending human readable data to external (public) web service
+* Email or smsm notifications for special case (e.g. maintainance)
+
+
 crontab task will call periodicaly a linux script with performs a python script (vrc.py). thispython scripts raeds the log-files on µSDcard and copies relevant data into a new textfile. Afterwards this textfile will be transfered to a ftp-repository on an web server 
 
 ## Cron-Daemon (Cronjobs)
