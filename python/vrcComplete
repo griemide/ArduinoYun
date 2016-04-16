@@ -1,0 +1,12 @@
+# /usr/bin
+# 2014-11-14 creation
+# 2015-02-19 copy result to 'txt' folder on local sd-card
+# 2016-04-16 derived from script vrc
+#
+pwd
+cd /mnt/sda1/arduino/www/vrc
+#
+python vrc2ftpComplete.py 
+#
+echo 'data sent to archive'
+# 
