@@ -61,6 +61,16 @@ SFTP service can than be used instandly (i.e. without booting the system) by usi
 
 used SFTP tools:
 * FileZilla............(Windows system :computer: )
+* 
+
+### Arduino Library restrictions for Arduino Yun vs. VRC application
+
+RX-buffer size mu AltSoftSerial-Library must be increased to 266 Bytes (default = 80 Bytes).
+Calculation: VRC 410 datagram = 67 octets. For better visualisation via RS-232 transfer these 67 octes will be presented in Hex-format plus blank. So 67 * 3 characters will be at least 201 charcters which needs to be bufferd within a 10 seconds period.
+
+
+
+##### Common
 
 
 [GitHub griemide](https://github.com/griemide)  - [EMOJ I](http://www.emoji-cheat-sheet.com/) :blush:
