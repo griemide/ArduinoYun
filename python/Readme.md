@@ -15,7 +15,7 @@ wifi-live-or-reset
 boot-complete-notify
 sleep 5s
 cd /www/sd/IFTTT
-./arp2ifttt.py 1> /tmp/IFTTT.log 2>&1 &
+python ./arp2ifttt.py 1> /tmp/log/ifttt.log 2>&1 &
 touch /tmp/end
 exit 0
 ```
