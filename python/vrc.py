@@ -3,7 +3,7 @@
 # Purpose:    build javascript file of data records to be displayed
 #
 # Author:     Michael Gries (griemide)
-# Copyright:  (c) 2014, Michael Gries
+# Copyright:  (c) 2014-2017, Michael Gries
 #
 # History:
 # 2014-11-09  first creation
@@ -17,6 +17,7 @@
 # 2015-03-28  Arduino Yun bridgeClient of python added
 # 2015-03-30  Min/Max values (Aussentemperatur) added
 # 2015-04-04  service request via SMS added (Nexmo)
+# 2017-01-19  service request via SMS added (Nexmo)
 #-------------------------------------------------------------------------------
 
 def main():
@@ -27,11 +28,13 @@ if __name__ == '__main__':
 
 DEBUG = False      # False == ignore Yun specific commands when running on PC
 
-version = "15.4.5"
+version = "17.1.29"
 
 sourcefilename = "vrc_2015-01-27.log"  # default
 destinationfilename = "vrc2008day.txt" # standard output file
 ftpTransferScript = "vrc2ftp.py"
+fileServiceScript = "service/servicemail.py"
+fileSendSMSScript = "service/sendSMSviaNexmo.py"
 datagramSize = 67
 
 import sys
@@ -87,7 +90,8 @@ sC2Brennerstarts = "0"
 fT1Aussen = 99.9        # float value for min/max comparison
 t1AussenMin = +99.9     # default (first values will overright default)
 t1AussenMax = -99.9     # default (first values will overright default)
-c0Service = 0		# manage service detection (default no service)
+c0Service = 0           # manage service detection (default no service)
+c0ServiceOnce = False   # send service notification on first detection
 c1Seconds = 10          # sample rate of monitoring system in seconds
 c1Totals  = 0           # totals of heading time per sample rate in seconds
 c2PeriodTotals = 0      # totals of heading period per day
@@ -204,7 +208,7 @@ def aggregateData(noOfTimestamps, recordNo, datagram):
       sH1hhmmss = "%s" % h1hhmmss # for bridge.put
       t1Aussen = getFloatSigned(dataset, posAussen)
       if (fT1Aussen < t1AussenMin):
-	  t1AussenMin = fT1Aussen
+          t1AussenMin = fT1Aussen
       if (fT1Aussen > t1AussenMax):
           t1AussenMax = fT1Aussen
       t1AussenText = "T[1][" + "%04d" % noOfTimestamps + "]=" + t1Aussen + "; "
@@ -324,11 +328,11 @@ for line in fobj_in:
         c0Service = 1 # service detected
     if checkHeatingTime(line, posStatus):
         c1Totals = c1Totals + c1Seconds
-	sC1Brennerdauer = "%d s" % c1Totals
+        sC1Brennerdauer = "%d s" % c1Totals
         if (not (c2PeriodStatus or c2PeriodLast)): # NOR gate
            c2PeriodStatus = True   # starts heating period
            c2PeriodTotals = c2PeriodTotals + 1
-	   sC2Brennerstarts = "%d" % c2PeriodTotals
+           sC2Brennerstarts = "%d" % c2PeriodTotals
     else:
         c2PeriodStatus = False  # ends heating period
     if checkNextMinute(line, posMinute):
@@ -369,16 +373,26 @@ vrcStatus = vrcStamp2 + "// %s " % sourcefilename + "-> vrc2008day.txt \n"
 print(vrcStatus)
 vrcScript = "start transfering 'vrc2008day.txt' via script '" + ftpTransferScript + "' ...\n"
 print(vrcScript)
-execfile("vrc2ftp.py")
+execfile(ftpTransferScript)
+
+#2017-01-29 {
 if c0Service:
-    print("sending service request ...")
+    print("service request detected ...")
     if not DEBUG:
-        execfile("service/servicemail.py")
+        if c0ServiceOnce:
+           print("sending service request once ...")
+           execfile(fileServiceScript)
+           c0ServiceOnce = False
         SMStime = timestamp.strftime('%H')
-        if (SMStime == '23'):
-            execfile("service/sendSMSviaNexmo.py")
+        if (SMStime == '20'):
+            print("sending service request at predefined time ...")
+            execfile(fileServiceScript)
+            print("sending service SMS notification at predefined time ...")
+            execfile(fileSendSMSScript)
 else:
-   print("no service request detected")
+    c0ServiceOnce = True #activate for first shot after service detection
+    print("no service request detected")
+#2017-01-29 }
 
 #2015-03-28 {
 if not DEBUG:
