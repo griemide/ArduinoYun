@@ -17,7 +17,7 @@
 # 2015-03-28  Arduino Yun bridgeClient of python added
 # 2015-03-30  Min/Max values (Aussentemperatur) added
 # 2015-04-04  service request via SMS added (Nexmo)
-# 2017-01-19  service request via SMS added (Nexmo)
+# 2017-01-29  service notification modified (send only once after detection)
 #-------------------------------------------------------------------------------
 
 def main():
@@ -43,7 +43,7 @@ if (cntArgv > 1):
    sourcefilename = str(sys.argv[1])
    print("argv[1]: " + sourcefilename)
 else:
-   print("argv[1]: n/a \n")
+   print("argv[1]: n/a (using default file) \n")
 print("Source : " + sourcefilename)
 
 #2015-03-28 {
@@ -92,6 +92,7 @@ t1AussenMin = +99.9     # default (first values will overright default)
 t1AussenMax = -99.9     # default (first values will overright default)
 c0Service = 0           # manage service detection (default no service)
 c0ServiceOnce = False   # send service notification on first detection
+c0ServiceSMS = False    # send service notification via SMS only once
 c1Seconds = 10          # sample rate of monitoring system in seconds
 c1Totals  = 0           # totals of heading time per sample rate in seconds
 c2PeriodTotals = 0      # totals of heading period per day
@@ -387,10 +388,13 @@ if c0Service:
         if (SMStime == '20'):
             print("sending service request at predefined time ...")
             execfile(fileServiceScript)
-            print("sending service SMS notification at predefined time ...")
-            execfile(fileSendSMSScript)
+            if c0ServiceSMS:
+               print("sending service SMS notification at predefined time ...")
+               execfile(fileSendSMSScript)
+               c0ServiceSMS = false
 else:
     c0ServiceOnce = True #activate for first shot after service detection
+    c0ServiceSMS  = True #activate for first shot after service detection (SMS)
     print("no service request detected")
 #2017-01-29 }
 
