@@ -12,12 +12,15 @@
 # 2017-01-29  link added to test Nexmo service via Mirosoft IE on BBMAG2083 
 #---------------------------------------------------------------------------------------------------------------------------
 
-import urllib2 
+#import urllib2 
+import urllib #2017-01-29 see Nexmo API Python example
 
 SMSfrom = '&from=VRC'
 SMSto = '&to=00491754193945'
 SMStext = '&text=Wartung Heizung (VKO unit)'
 SMStextTest = '&Test'
+
+print('Script sendSMSviaNexmo.py Version 17.1.29')
 
 #following two lines only used for testing handler function in generell (not related to Nexmo service)
 #test_url = 'https://api.github.com/events' # OK (tested 2015-04-03)
@@ -30,12 +33,13 @@ SMStextTest = '&Test'
 # attention: no blanks allowed in URL (will result in HTTP 400: Bad Request)
 # https://de.wikipedia.org/wiki/HTTP-Statuscode
 # but blanks will work in Microsoft IE Browser (so mismatch in behaviour not checked yet)
-nexmoAPI_url = 'https://rest.nexmo.com/sms/json?api_key=17658d32&api_secret=6a75a7ad'
+nexmoAPI_url = 'http://rest.nexmo.com/sms/json?api_key=17658d32&api_secret=6a75a7ad'
 # TODO: using https will raise handler error due to wrong type. http wille result in 404 (Not Found) 
 
 #nexmoAPI_request = nexmoAPI_url + SMSfrom + SMSto + SMStext.replace(' ', '%20') 
 nexmoAPI_request = nexmoAPI_url + SMSfrom + SMSto + SMStextTest 
-handler = urllib2.urlopen(nexmoAPI_request) 
+#handler = urllib2.urlopen(nexmoAPI_request) 
+handler = urllib.urlopen(nexmoAPI_request) 
 
 response = handler.read()
 print response
