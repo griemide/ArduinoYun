@@ -17,7 +17,8 @@
 # 2015-03-28  Arduino Yun bridgeClient of python added
 # 2015-03-30  Min/Max values (Aussentemperatur) added
 # 2015-04-04  service request via SMS added (Nexmo)
-# 2017-01-29  service notification modified (send only once after detection)
+# 2017-01-29  service notification modified (send only at given time 20:00h)
+# 2017-02-07  service notification modified (send only once after detection)
 #-------------------------------------------------------------------------------
 
 def main():
@@ -32,6 +33,7 @@ version = "17.1.29"
 
 sourcefilename = "vrc_2015-01-27.log"  # default
 destinationfilename = "vrc2008day.txt" # standard output file
+serviceStatusFilename = "service.ini"  # stores service related data
 ftpTransferScript = "vrc2ftp.py"
 fileServiceScript = "service/servicemail.py"
 fileSendSMSScript = "service/sendSMSviaNexmo.py"
@@ -376,26 +378,38 @@ vrcScript = "start transfering 'vrc2008day.txt' via script '" + ftpTransferScrip
 print(vrcScript)
 execfile(ftpTransferScript)
 
+#2017-05-03 {
+import subprocess
+print("test subprocess.call(ts.py)")
+#execfile("ts.py")
+#subprocess.call(['./abc.py', arg1, arg2])
+subprocess.call([sys.executable,'./ts.py', sT1Aussen, sT2Wasser, sT3Kessel, sT4Heiz_k, sL1Status])
+#2017-05-03 }
+
 #2017-01-29 {
-if c0Service:
+if  c0Service:
     print("service request detected ...")
     if not DEBUG:
-        if c0ServiceOnce:
-           print("sending service request once ...")
-           execfile(fileServiceScript)
-           c0ServiceOnce = False
+        fobj_ser = open(serviceStatusFilename)
+        if  c0ServiceOnce:
+            print("sending service request once ...")
+            execfile(fileServiceScript)
+            c0ServiceOnce = False
+        else:
+            print("... service request already notified")
         SMStime = timestamp.strftime('%H')
         if (SMStime == '20'):
             print("sending service request at predefined time ...")
             execfile(fileServiceScript)
-            if c0ServiceSMS:
-               print("sending service SMS notification at predefined time ...")
-               execfile(fileSendSMSScript)
-               c0ServiceSMS = false
+            if  c0ServiceSMS:
+                print("sending service SMS notification at predefined time ...")
+                execfile(fileSendSMSScript)
+                c0ServiceSMS = false
 else:
+    print("no service request detected")
     c0ServiceOnce = True #activate for first shot after service detection
     c0ServiceSMS  = True #activate for first shot after service detection (SMS)
-    print("no service request detected")
+
 #2017-01-29 }
 
 #2015-03-28 {
