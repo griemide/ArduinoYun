@@ -19,6 +19,7 @@
 # 2015-04-04  service request via SMS added (Nexmo)
 # 2017-01-29  service notification modified (send only at given time 20:00h)
 # 2017-02-07  service notification modified (send only once after detection)
+# 2017-05-03  subprocess.call to ts.py script added (ThingSpeak update)
 #-------------------------------------------------------------------------------
 
 def main():
@@ -383,7 +384,7 @@ import subprocess
 print("test subprocess.call(ts.py)")
 #execfile("ts.py")
 #subprocess.call(['./abc.py', arg1, arg2])
-subprocess.call([sys.executable,'./ts.py', sT1Aussen, sT2Wasser, sT3Kessel, sT4Heiz_k, sL1Status])
+subprocess.call([sys.executable,'./ts.py', sT1Aussen, sT2Wasser, sT3Kessel, sT4Heiz_k, sB1Betrieb])
 #2017-05-03 }
 
 #2017-01-29 {
