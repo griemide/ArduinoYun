@@ -1,0 +1,26 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+touch /tmp/begin
+
+wifi-live-or-reset
+boot-complete-notify
+
+sleep 5s
+cd /www/sd/IFTTT
+python ./arp2ifttt.py 
+#python ./arp2ifttt.py 1>/tmp/log/ifttt.log 2>&1 &
+
+# Uncomment the following line in order to reset the microntroller
+# right after linux becomes ready
+
+#reset-mcu
+
+# Uncomment the following line in order to disable kernel console
+# debug messages, thus having a silent and clean serial communication
+# with the microcontroller
+
+#echo 0 > /proc/sys/kernel/printk
+
+touch /tmp/end
+exit 0
