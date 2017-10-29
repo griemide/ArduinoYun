@@ -27,13 +27,13 @@ print('Script sendSMSviaNexmo.py Version 17.1.29')
 #handler = urllib2.urlopen(test_url) 
 
 #following line can be used to test nexmo service via Microsoft IE on i.e. BBMAG2083 
-#https://rest.nexmo.com/sms/json?api_key=17658d32&api_secret=6a75a7ad&from=BBMAG2083&to=00491754193945&text=Service Test https
-#http://rest.nexmo.com/sms/json?api_key=17658d32&api_secret=6a75a7ad&from=BBMAG2083&to=00491754193945&text=Service Test
+#https://rest.nexmo.com/sms/json?api_key=&api_secret=&from=BBMAG2083&to=&text=Service Test https
+#http://rest.nexmo.com/sms/json?api_key=&api_secret=&from=BBMAG2083&to=&text=Service Test
 
 # attention: no blanks allowed in URL (will result in HTTP 400: Bad Request)
 # https://de.wikipedia.org/wiki/HTTP-Statuscode
 # but blanks will work in Microsoft IE Browser (so mismatch in behaviour not checked yet)
-nexmoAPI_url = 'http://rest.nexmo.com/sms/json?api_key=17658d32&api_secret=6a75a7ad'
+nexmoAPI_url = 'http://rest.nexmo.com/sms/json?api_key=&api_secret='
 # TODO: using https will raise handler error due to wrong type. http wille result in 404 (Not Found) 
 
 #nexmoAPI_request = nexmoAPI_url + SMSfrom + SMSto + SMStext.replace(' ', '%20') 
