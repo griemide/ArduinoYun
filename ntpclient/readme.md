@@ -27,3 +27,5 @@ Inline-`**
 Periodic Time Synchronisation  Create /etc/crontabs/root with the following contents:   # to timesync every 10 minutes
   */10 * * * * /etc/init.d/S55ntpclient
   
+***
+Text mit Fußnote[^fußnote]... Beliebiger Text ...[^fußnote]: Fußnoten-Text
