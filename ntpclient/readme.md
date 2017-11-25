@@ -9,25 +9,21 @@ Keywords:  NTP, Arduino Yun, sync
 
 [blog reference](http://martybugs.net/wireless/openwrt/timesync.cgi "martybugs.net")
 
-The init script, /etc/init.d/S55ntpclient, is modified to the following:   #!/bin/sh
+Create init script /etc/init.d/S55ntpclient, with following lines   
 
-Inline-`**
-
-  # kill any existing ntpclient processes
+`´´ script
+  #!/bin/sh
+  # kill any existing ntpclient processes
   # (they can get stuck if no route to target host)
   /usr/bin/killall ntpclient
-
   # do time sync
   /usr/sbin/ntpclient -l -h 10.60.74.2 -c 1 -s &
-  
-   
-**`
+```
 
----
-Periodic Time Synchronisation  Create /etc/crontabs/root with the following contents:   # to timesync every 10 minutes
-  */10 * * * * /etc/init.d/S55ntpclient
-  
 ***
-Text mit Fußnote[^fußnote]
-... Beliebiger Text ...
-[^fußnote]: Fußnoten-Text
+Periodic Time Synchronisation  Create /etc/crontabs/root with the following contents:   
+```´script
+ # to timesync every 10 minutes
+ */10 * * * * /etc/init.d/S55ntpclient
+```´
+  
