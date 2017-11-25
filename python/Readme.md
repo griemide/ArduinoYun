@@ -1,4 +1,4 @@
-#Python scripts
+# Python scripts
 
 
 ### Starting a script after the CPU Linino boot 
