@@ -28,4 +28,6 @@ Periodic Time Synchronisation  Create /etc/crontabs/root with the following cont
   */10 * * * * /etc/init.d/S55ntpclient
   
 ***
-Text mit Fußnote[^fußnote]... Beliebiger Text ...[^fußnote]: Fußnoten-Text
+Text mit Fußnote[^fußnote]
+... Beliebiger Text ...
+[^fußnote]: Fußnoten-Text
