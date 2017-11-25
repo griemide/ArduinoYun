@@ -11,7 +11,7 @@ Keywords:  NTP, Arduino Yun, sync
 
 Create init script /etc/init.d/S55ntpclient, with following lines   
 
-`´´ script
+``` script
   #!/bin/sh
   # kill any existing ntpclient processes
   # (they can get stuck if no route to target host)
@@ -22,8 +22,8 @@ Create init script /etc/init.d/S55ntpclient, with following lines  
 
 ***
 Periodic Time Synchronisation  Create /etc/crontabs/root with the following contents:   
-```´script
+
+``` script
  # to timesync every 10 minutes
  */10 * * * * /etc/init.d/S55ntpclient
-```´
-  
+```  
